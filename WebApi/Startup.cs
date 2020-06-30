@@ -28,6 +28,15 @@ namespace WebApi
             services.AddCors(options => {
                 options.AddPolicy("CorsPolicy", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
+
+            services.AddSwaggerGen(swagger => {
+                swagger.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Title = "Producto",
+                    Version= "v1"
+                });
+            });
+            
             services.AddControllers();
         }
 
@@ -50,6 +59,12 @@ namespace WebApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(ui => {
+                ui.SwaggerEndpoint("/swagger/v1/swagger.json", "API PRODUCTO v1");
             });
         }
     }
