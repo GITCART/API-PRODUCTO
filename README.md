@@ -21,8 +21,8 @@ Disponibles para el uso del WEB API
 4. Finalmente, compila y ejecuta la aplicación
 
 ### Como utilizar el Web - SPA
-1. Instalar NodeJS [NODEJS](https://nodejs.org/es/) para poder instalar Angular
-2. Instalar Angular [ANGULAR](https://angular.io/)
+1. Instalar [NODEJS](https://nodejs.org/es/) para poder instalar Angular
+2. Instalar [ANGULAR](https://angular.io/)
 3. Para reconstruir la Web-SPA ejecute  en [WEB-SPA](https://github.com/GITCART/API-PRODUCTO/tree/master/WebSpa)
     ```
     npm install
@@ -33,8 +33,9 @@ Disponibles para el uso del WEB API
 ### Tecnologias Implementadas
 * ASP.NET Core 3.0
 * Conexión a la base de datos SQL SERVER 2019
+* Swagger
 * Angular 9
-* TyScript
+* TypeScript
 * Bootstrap 4
 
 ### Arquitectura
