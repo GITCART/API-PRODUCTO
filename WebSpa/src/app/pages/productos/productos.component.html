@@ -1,0 +1,42 @@
+<h1 class="text-center p-3">
+    Productos
+</h1>
+
+<table *ngIf="!cargando && !error" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Opción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let producto of productos; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{producto.descripcion}}</td>
+            <td>{{producto.precio}}</td>
+            <td>
+                <button (click)="verProducto(producto.id)" class="btn btn-outline-info mr-1">  <i class="fas fa-eye"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div *ngIf="cargando" class="alter alter-info text-center mt-3 p-1">
+    <h4 class="alter-heading">Cargando...</h4>
+    <p>
+        <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+    </p>
+    <p class="mb-0">
+        Espero porfavor.
+    </p>
+</div>
+
+<div *ngIf="!cargando && error" class="alter alter-warning text-center mt-3 p-1" style="background: #ac9898;">
+    <h4 class="alter-heading">No hay productos y/o Error en el servidor</h4>
+    <p>
+        <i class="fa fa-exclamation fa-2x"></i>
+    </p>
+</div>

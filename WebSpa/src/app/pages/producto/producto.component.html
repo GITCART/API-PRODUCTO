@@ -1,0 +1,46 @@
+<div *ngIf="!cargando && !error" class="p-5">
+
+    <h3>Producto: <small>{{producto.codigo}}</small></h3>
+    <div class="row p-1">
+        <div class="col text-right">
+            <button routerLink="/productos" class="btn btn-danger">
+                <i class="fa fa-arrow-left"></i>
+                Regresar
+            </button>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="assets/img/producto.jpg" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{producto.codigo}}</h5>
+                    <p class="card-text">{{producto.descripcion}}</p>
+                </div>
+                <div class="card-footer text-muted">
+                    Precio: {{producto.precio}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="cargando" class="alter alter-info text-center mt-3 p-1">
+    <h4 class="alter-heading">Cargando...</h4>
+    <p>
+        <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+    </p>
+    <p class="mb-0">
+        Espero porfavor.
+    </p>
+</div>
+
+<div *ngIf="!cargando && error" class="alter alter-warning text-center mt-3 p-1" style="background: #ac9898;">
+    <h4 class="alter-heading">No hay productos y/o Error en el servidor</h4>
+    <p>
+        <i class="fa fa-exclamation fa-2x"></i>
+    </p>
+</div>
